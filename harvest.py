@@ -34,33 +34,38 @@ def make_melon_types():
     """Returns a list of current melon types."""
 
     all_melon_types = []
-    musk = MelonType("musk","1998","green",True,True)
+    musk = MelonType("musk","1998","green", True, True, "Muskmelon")
     musk.add_pairing("mint")
     all_melon_types.append(musk)
 
-    cas = MelonType("cas","2003","orange",False,None)
+    cas = MelonType("cas","2003","orange", False, None, "Casaba")
     cas.add_pairing("strawberries")
     cas.add_pairing("mint")
     all_melon_types.append(cas)
 
-    cren = MelonType("cren","1996","green",False,None)
+    cren = MelonType("cren","1996","green", False, None, "Crenshaw")
     cren.add_pairing("proscuitto")
     all_melon_types.append(cren)
 
-    yw = MelonType("yw","2013","yellow", False, True)
+    yw = MelonType("yw","2013","yellow", False, True, "Yellow Watermelon")
     yw.add_pairing("ice cream")
     all_melon_types.append(yw)
 
-
-
     # Fill in the rest
-
     return all_melon_types
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
 
     # Fill in the rest
+    # melon_types = make_melon_types()
+    for melon in melon_types:
+        print(f"{melon.name} pairs with")
+        for pairing in melon.pairings:
+            print(f"-{pairing}")
+
+
+
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
@@ -87,5 +92,6 @@ def get_sellability_report(melons):
 
     # Fill in the rest 
 
-
-
+# print(print_pairing_info())
+all_melon_types = make_melon_types()
+print(print_pairing_info(all_melon_types))
